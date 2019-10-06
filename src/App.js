@@ -91,20 +91,6 @@ function App() {
   };
 
   const { inputs, handleSubmit, handleChange } = useOpportunities(saveData);
-
-  // function handleTextFiled(e) {
-  //   handleTextValue(value);
-  // }
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //
-  //   const data = [...value];
-  //
-  //   console.log(data);
-  //   try {
-  //     debugger;
-  //   } catch (e) {}
-  // }
   return (
     <Fragment>
       <Header>data collection</Header>
