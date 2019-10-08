@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import axios from 'axios';
+import styled, { css } from 'styled-components';
 import useOpportunities from './CustomeHooks';
 
 const Container = styled.div`
@@ -93,7 +94,7 @@ function App() {
   const { inputs, handleSubmit, handleChange } = useOpportunities(saveData);
   return (
     <Fragment>
-      <Header>data collection</Header>
+      <Header>Partners Registration</Header>
 
       <Form onSubmit={handleSubmit}>
         <Container>
@@ -111,7 +112,7 @@ function App() {
           </FlexItem>
 
           <FlexItem>
-            <Lable htmfor="theme">Them</Lable>
+            <Lable htmfor="theme">Theme</Lable>
             <SelectInput
               name="theme"
               options={[
@@ -143,32 +144,83 @@ function App() {
                 'Germany',
                 'UK',
                 'France',
-                'The Netherlands',
+                'Netherlands',
                 'Jordan',
                 'Spain',
               ]}
               onchange={handleChange}
             />
           </FlexItem>
+
+          <FlexItem>
+            <Lable htmfor="city"> City (optional)</Lable>
+            <TextInput onchange={handleChange} name="city" placeholder="London" />
+          </FlexItem>
           <FlexItem>
             <Lable htmfor="durationInMonths">Duration in months</Lable>
             <SelectInput
-              name="durationInMonths"
+              name="dur   ationInMonths"
               options={['select a duration', 'less than 3 months', '3-12', 'permanent']}
               onchange={handleChange}
             />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="nextStartDate">Next start date</Lable>
+            <Lable
+              className={'longtext'}
+              htmfor="nextStartDate"
+              css={css`
+                padding-bottom: 200px;
+              `}
+            >
+              Next start date (if this is an ongoing opportunity, please do not select a date)
+            </Lable>
             <DateInput name="nextStartDate" onchange={handleChange} />
           </FlexItem>
           <FlexItem>
             <Lable htmfor="timeCommitmentPerWeek">Time commitment per week(hour per week)</Lable>
-            <NumberInput name="timeCommitmentPerWeek" onchange={handleChange} />
+            <SelectInput
+              name="timeCommitmentPerWeek"
+              options={['select a time', 'full time', 'part time']}
+              onchange={handleChange}
+            />
           </FlexItem>
           <FlexItem>
             <Lable htmfor="linkORContactToApply"> Link/Contact to apply</Lable>
             <TextInput onchange={handleChange} name={'linkORContactToApply'} />
+          </FlexItem>
+
+          <FlexItem>
+            <Lable htmfor="candidateReadiness ">candidate readiness </Lable>
+            <SelectInput
+              name="candidateReadiness"
+              options={[
+                'select the candidate readiness',
+                'beginner (no prior domain knowledge required)',
+                'medium (some domain knowledge is required)',
+                'advanced (solid domain knowledge required)',
+              ]}
+              onchange={handleChange}
+            />
+          </FlexItem>
+          <FlexItem>
+            <Lable htmfor="en_requirements"> English requirements (1: no english, 10: fluent)</Lable>
+            <SelectInput
+              onchange={handleChange}
+              name={'en_requirements'}
+              options={['select english requirements', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+            />
+          </FlexItem>
+          <FlexItem>
+            <Lable htmfor="local_lan_requirements"> Local language requirements (1: no, 10: fluent)</Lable>
+            <SelectInput
+              onchange={handleChange}
+              name={'local_lan_requirements'}
+              options={['select the local language requirements', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']}
+            />
+          </FlexItem>
+          <FlexItem>
+            <Lable htmfor="comments">comments (optional)</Lable>
+            <TextInput onchange={handleChange} name={'comments'} />
           </FlexItem>
 
           <ButtonWrapper>
