@@ -17,6 +17,7 @@ const Header = styled.p`
   display: flex;
   justify-content: center;
   font-size: large;
+  font-weight: bold;
 `;
 const Lable = styled.label`
   width: 100%;
