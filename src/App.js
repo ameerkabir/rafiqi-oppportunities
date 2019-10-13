@@ -93,8 +93,7 @@ const NumberInput = ({ name, onchange, value }) => {
 function App() {
   const saveData = () => {
     try {
-      console.log(inputs);
-      return inputs;
+      return axios.post(`http://localhost:4000/staging`, inputs);
     } catch (e) {
       console.log(e);
     }
