@@ -100,20 +100,20 @@ function App() {
       <Form onSubmit={handleSubmit}>
         <Container>
           <FlexItem>
-            <Lable htmfor="OpportunityProvider"> Opportunity provider</Lable>
+            <Lable htmlFor="OpportunityProvider"> Opportunity provider</Lable>
             <TextInput onchange={handleChange} name="OpportunityProvider" placeholder="IT" />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="OpportunityCategory">Opportunity category</Lable>
+            <Lable htmlFor="OpportunityCategory">Opportunity category</Lable>
             <SelectInput
               name="OpportunityCategory"
-              options={['Select A category', 'job', 'training', 'education', 'mentorship']}
+              options={['Select A category', 'Job', 'Training', 'University Degree', 'Certified Training']}
               onchange={handleChange}
             />
           </FlexItem>
 
           <FlexItem>
-            <Lable htmfor="theme">Theme</Lable>
+            <Lable htmlFor="theme">Theme</Lable>
             <SelectInput
               name="theme"
               options={[
@@ -132,11 +132,11 @@ function App() {
             />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="deliveryMode">Delivery mode</Lable>
+            <Lable htmlFor="deliveryMode">Delivery mode</Lable>
             <SelectInput name="deliveryMode" options={['online', 'onside', 'hybrid']} onchange={handleChange} />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="eligibleCountry">Eligible country</Lable>
+            <Lable htmlFor="eligibleCountry">Eligible country</Lable>
             <SelectInput
               name="eligibleCountry"
               options={[
@@ -154,13 +154,13 @@ function App() {
           </FlexItem>
 
           <FlexItem>
-            <Lable htmfor="city"> City (optional)</Lable>
+            <Lable htmlFor="city"> City (optional)</Lable>
             <TextInput onchange={handleChange} name="city" placeholder="London" />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="durationInMonths">Duration in months</Lable>
+            <Lable htmlFor="durationInMonths">Duration in months</Lable>
             <SelectInput
-              name="dur   ationInMonths"
+              name="durationInMonths"
               options={['select a duration', 'less than 3 months', '3-12', 'permanent']}
               onchange={handleChange}
             />
@@ -168,7 +168,7 @@ function App() {
           <FlexItem>
             <Lable
               className={'longtext'}
-              htmfor="nextStartDate"
+              htmlFor="nextStartDate"
               css={css`
                 padding-bottom: 200px;
               `}
@@ -178,7 +178,7 @@ function App() {
             <DateInput name="nextStartDate" onchange={handleChange} />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="timeCommitmentPerWeek">Time commitment per week(hour per week)</Lable>
+            <Lable htmlFor="timeCommitmentPerWeek">Time commitment per week(hour per week)</Lable>
             <SelectInput
               name="timeCommitmentPerWeek"
               options={['select a time', 'full time', 'part time']}
@@ -186,12 +186,12 @@ function App() {
             />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="linkORContactToApply"> Link/Contact to apply</Lable>
+            <Lable htmlFor="linkORContactToApply"> Link/Contact to apply</Lable>
             <TextInput onchange={handleChange} name={'linkORContactToApply'} />
           </FlexItem>
 
           <FlexItem>
-            <Lable htmfor="candidateReadiness ">candidate readiness </Lable>
+            <Lable htmlFor="candidateReadiness">candidate readiness </Lable>
             <SelectInput
               name="candidateReadiness"
               options={[
@@ -204,7 +204,7 @@ function App() {
             />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="en_requirements"> English requirements (1: no english, 10: fluent)</Lable>
+            <Lable htmlFor="en_requirements"> English requirements (1: no english, 10: fluent)</Lable>
             <SelectInput
               onchange={handleChange}
               name={'en_requirements'}
@@ -212,7 +212,7 @@ function App() {
             />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="local_lan_requirements"> Local language requirements (1: no, 10: fluent)</Lable>
+            <Lable htmlFor="local_lan_requirements"> Local language requirements (1: no, 10: fluent)</Lable>
             <SelectInput
               onchange={handleChange}
               name={'local_lan_requirements'}
@@ -220,7 +220,7 @@ function App() {
             />
           </FlexItem>
           <FlexItem>
-            <Lable htmfor="comments">comments (optional)</Lable>
+            <Lable htmlFor="comments">comments (optional)</Lable>
             <TextInput onchange={handleChange} name={'comments'} />
           </FlexItem>
 
