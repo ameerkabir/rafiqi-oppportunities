@@ -58,16 +58,24 @@ const SubmitButton = ({ children }) => {
 const TextInput = ({ onchange, value, name, placeholder }) => {
   return (
     <Fragment>
-      <Input type="text" onChange={onchange} value={value} name={name} placeholder={placeholder} />
+      <Input
+        id={name}
+        value={value}
+        type="text"
+        onChange={onchange}
+        value={value}
+        name={name}
+        placeholder={placeholder}
+      />
     </Fragment>
   );
 };
-const DateInput = ({ onchange, value, name, labelText }) => {
-  return <Input type="date" onChange={onchange} value={value} name={name} />;
+const DateInput = ({ onchange, value, name }) => {
+  return <Input type="date" onChange={onchange} value={value} name={name} id={name} />;
 };
 const SelectInput = ({ options, onchange, name }) => {
   return (
-    <Select type="select" name={name} onChange={onchange}>
+    <Select type="select" name={name} onChange={onchange} id={name}>
       {options.map(option => {
         return (
           <option key={option} value={option.value}>
