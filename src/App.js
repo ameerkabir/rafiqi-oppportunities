@@ -66,8 +66,9 @@ function App() {
               name="theme"
               options={[
                 'select a theme',
+                'entrepreneurship and incubation',
                 'IT support and Networking',
-                'Web Mobile Software Development',
+                'Web/Mobile/Software development',
                 'Data Analytics',
                 'Artificial Intelligence',
                 'Healthcare Professional',
@@ -77,14 +78,14 @@ function App() {
                 'Digital Marketing',
                 'Sales Customer Service',
                 'Artist & Creative Vocations(painter, poet)',
-                'Content Manger(Writer, translator, content creator)',
+                'Content Manager(Writer, translator, content creator)',
                 'Legal',
                 'Political & Social Science',
                 'Social Worker',
                 'Accounting And Finance',
                 'Business And Management',
                 'Scientific Research',
-                'Research Others',
+                'Other Research',
                 'Others',
               ]}
               onchange={handleChange}
@@ -92,14 +93,14 @@ function App() {
           </FlexItem>
           <FlexItem>
             <Label htmlFor="deliveryMode">Delivery mode</Label>
-            <SelectInput name="deliveryMode" options={['online', 'onside', 'hybrid']} onchange={handleChange} />
+            <SelectInput name="deliveryMode" options={['online', 'onsite', 'hybrid']} onchange={handleChange} />
           </FlexItem>
           <FlexItem>
-            <Label htmlFor="eligibleCountry">Eligible country</Label>
+            <Label htmlFor="eligibleCountry">Opportunity country</Label>
             <SelectInput
-              name="eligibleCountry"
+              name="OpportunityCountry"
               options={[
-                'select an eligible country',
+                'select Opportunity country',
                 'Sweden',
                 'Germany',
                 'UK',
@@ -137,10 +138,10 @@ function App() {
             <DateInput name="nextStartDate" onchange={handleChange} />
           </FlexItem>
           <FlexItem>
-            <Label htmlFor="timeCommitmentPerWeek">Time commitment per week(hour per week)</Label>
+            <Label htmlFor="timeCommitmentPerWeek">Time commitment per week</Label>
             <SelectInput
               name="timeCommitmentPerWeek"
-              options={['select a time', 'full time', 'part time']}
+              options={['select a time', 'Full-time (30+ hours per week)', 'Part-time (< 30 hours per week)']}
               onchange={handleChange}
             />
           </FlexItem>
@@ -150,14 +151,14 @@ function App() {
           </FlexItem>
 
           <FlexItem>
-            <Label htmlFor="candidateReadiness">candidate readiness </Label>
+            <Label htmlFor="candidateReadiness">Expected candidate readiness </Label>
             <SelectInput
               name="candidateReadiness"
               options={[
                 'select the candidate readiness',
-                'beginner (no prior domain knowledge required)',
-                'medium (some domain knowledge is required)',
-                'advanced (solid domain knowledge required)',
+                'low: candidate does not require much knowledge in the field',
+                'medium: candidate should have some related work or education background',
+                'high: candidate should be a domain-expert',
               ]}
               onchange={handleChange}
             />
@@ -171,7 +172,10 @@ function App() {
             />
           </FlexItem>
           <FlexItem>
-            <Label htmlFor="local_lan_requirements"> Local language requirements (1: no, 10: fluent)</Label>
+            <Label htmlFor="local_lan_requirements">
+              {' '}
+              Local language requirements (1: no local language knowledge, 10: fluent)
+            </Label>
             <SelectInput
               onchange={handleChange}
               name={'local_lan_requirements'}
