@@ -30,6 +30,10 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `;
+const Overflow = styled.div`
+  white-space: nowrap;
+  overflow: auto;
+`;
 
 function App() {
   const saveData = () => {
@@ -133,7 +137,7 @@ function App() {
                 padding-bottom: 200px;
               `}
             >
-              Next start date (if this is an ongoing opportunity, please do not select a date)
+              <Overflow> Next start date (if this is an ongoing opportunity, please do not select a date)</Overflow>
             </Label>
             <DateInput name="nextStartDate" onchange={handleChange} />
           </FlexItem>
